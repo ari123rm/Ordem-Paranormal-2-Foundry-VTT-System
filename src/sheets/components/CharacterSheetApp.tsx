@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./CharacterSheetApp.module.scss";
-
-const modifier = (score: number) => Math.floor((score - 10) / 2);
-const fmtMod = (mod: number) => (mod >= 0 ? `+${mod}` : `${mod}`);
+import { localize } from "../../i18n";
+import { modifier, fmtMod } from "./CharacterSheetApp.logic";
 
 export function CharacterSheetApp({ actor }: { actor: Actor.Implementation }) {
   const system = actor.system;
@@ -36,7 +35,7 @@ export function CharacterSheetApp({ actor }: { actor: Actor.Implementation }) {
       <div className={styles.attributes}>
         {(["strength", "agility", "spirit"] as const).map((key) => (
           <label className={styles.attributeLabel} key={key}>
-            {key}
+            {localize(`BOILERPLATE.Attributes.${key}`)}
             <input
               type="number"
               value={attrs[key]}
@@ -47,27 +46,28 @@ export function CharacterSheetApp({ actor }: { actor: Actor.Implementation }) {
         ))}
       </div>
       <div className={styles.totals}>
-        <span>Total: {total}</span>
-        <span>Total mod: {fmtMod(totalMod)}</span>
+        <span>
+          {localize("BOILERPLATE.Sheet.Total")}: {total}
+        </span>
+        <span>
+          {localize("BOILERPLATE.Sheet.TotalMod")}: {fmtMod(totalMod)}
+        </span>
       </div>
       <label className={styles.attributeLabel}>
-        Biography
-        <textarea
-          defaultValue={system.biography}
-          onBlur={(e) => updateBiography(e.target.value)}
-        />
+        {localize("BOILERPLATE.Sheet.Biography")}
+        <textarea defaultValue={system.biography} onBlur={(e) => updateBiography(e.target.value)} />
       </label>
 
       <div className={styles.chatRow}>
         <input
           type="text"
-          placeholder="Say something..."
+          placeholder={localize("BOILERPLATE.Sheet.ChatPlaceholder")}
           value={chatMessage}
           onChange={(e) => setChatMessage(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendChatMessage()}
         />
         <button type="button" onClick={sendChatMessage}>
-          Send to chat
+          {localize("BOILERPLATE.Sheet.SendToChat")}
         </button>
       </div>
     </div>

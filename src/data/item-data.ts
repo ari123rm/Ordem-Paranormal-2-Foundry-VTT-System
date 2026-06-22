@@ -2,7 +2,13 @@ function defineSchema() {
   const fields = foundry.data.fields;
   return {
     description: new fields.HTMLField({ initial: "" }),
-    quantity: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0 })
+    quantity: new fields.NumberField({
+      required: true,
+      nullable: false,
+      integer: true,
+      initial: 1,
+      min: 0
+    })
   };
 }
 

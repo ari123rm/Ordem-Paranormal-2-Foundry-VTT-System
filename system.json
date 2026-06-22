@@ -1,9 +1,9 @@
 {
-  "id": "newsystem",
+  "id": "fvtt-ts-react-boilerplate",
   "version": "0.8.2",
-  "title": "Newsystem",
+  "title": "FVTT TS+React Boilerplate",
   "url": "",
-  "description": "First edition of Newsystem",
+  "description": "A TypeScript + React + Vite boilerplate for Foundry VTT V14 system development",
   "license": "LICENSE.txt",
   "authors": [
     {
@@ -12,12 +12,8 @@
       "flags": {}
     }
   ],
-  "esmodules": [
-    "dist/system.mjs"
-  ],
-  "styles": [
-    "dist/style.css"
-  ],
+  "esmodules": ["dist/system.mjs"],
+  "styles": ["dist/style.css"],
   "languages": [
     {
       "lang": "en",
@@ -44,8 +40,6 @@
     "minimum": "14",
     "verified": "14"
   },
-  "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power",
   "manifest": "",
   "download": "",
   "grid": {

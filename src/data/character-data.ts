@@ -3,9 +3,24 @@ function defineSchema() {
   return {
     biography: new fields.HTMLField({ initial: "" }),
     attributes: new fields.SchemaField({
-      strength: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 10 }),
-      agility: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 10 }),
-      spirit: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 10 })
+      strength: new fields.NumberField({
+        required: true,
+        nullable: false,
+        integer: true,
+        initial: 10
+      }),
+      agility: new fields.NumberField({
+        required: true,
+        nullable: false,
+        integer: true,
+        initial: 10
+      }),
+      spirit: new fields.NumberField({
+        required: true,
+        nullable: false,
+        integer: true,
+        initial: 10
+      })
     })
   };
 }

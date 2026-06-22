@@ -4,7 +4,7 @@ import { ItemSheetApp } from "./components/ItemSheetApp";
 
 export class ItemSheet extends foundry.applications.sheets.ItemSheetV2 {
   static DEFAULT_OPTIONS = {
-    classes: ["newsystem", "sheet", "item"],
+    classes: ["fvtt-ts-react-boilerplate", "sheet", "item"],
     position: { width: 480, height: 360 }
   };
 
@@ -24,9 +24,7 @@ export class ItemSheet extends foundry.applications.sheets.ItemSheetV2 {
     this.#root.render(React.createElement(ItemSheetApp, { item: this.document }));
   }
 
-  override async close(
-    ...args: Parameters<foundry.applications.sheets.ItemSheetV2["close"]>
-  ) {
+  override async close(...args: Parameters<foundry.applications.sheets.ItemSheetV2["close"]>) {
     this.#root?.unmount();
     this.#root = null;
     return super.close(...args);

@@ -1,0 +1,20 @@
+{
+  "BOILERPLATE": {
+    "Attributes": {
+      "strength": "Strength",
+      "agility": "Agility",
+      "spirit": "Spirit"
+    },
+    "Sheet": {
+      "Biography": "Biography",
+      "Total": "Total",
+      "TotalMod": "Total mod",
+      "ChatPlaceholder": "Say something...",
+      "SendToChat": "Send to chat"
+    },
+    "Item": {
+      "Quantity": "Quantity",
+      "Description": "Description"
+    }
+  }
+}

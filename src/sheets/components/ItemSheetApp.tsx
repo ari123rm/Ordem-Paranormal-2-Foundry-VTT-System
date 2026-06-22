@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ItemSheetApp.module.scss";
+import { localize } from "../../i18n";
 
 export function ItemSheetApp({ item }: { item: Item.Implementation }) {
   const system = item.system;
@@ -16,7 +17,7 @@ export function ItemSheetApp({ item }: { item: Item.Implementation }) {
     <div className={styles.sheet}>
       <h1>{item.name}</h1>
       <label className={styles.label}>
-        Quantity
+        {localize("BOILERPLATE.Item.Quantity")}
         <input
           type="number"
           min={0}
@@ -25,7 +26,7 @@ export function ItemSheetApp({ item }: { item: Item.Implementation }) {
         />
       </label>
       <label className={styles.label}>
-        Description
+        {localize("BOILERPLATE.Item.Description")}
         <textarea
           defaultValue={system.description}
           onBlur={(e) => updateDescription(e.target.value)}
