@@ -3,22 +3,33 @@ name: Release Foundry VTT System
 on:
   push:
     tags:
-      - 'v*' # A action vai rodar automaticamente quando você criar uma tag (ex: v1.0.0)
+      - 'v*'
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Permissão necessária para a Action criar a release
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build system
+        run: npm run build
+
       - name: Build system.zip
         run: |
-          # Compacta os arquivos do sistema na raiz do zip, ignorando pastas do git/github
-          zip -r system.zip . -x ".git/*" -x ".github/*" -x ".gitignore"
+          zip -r system.zip . -x ".git/*" -x ".github/*" -x ".gitignore" -x "node_modules/*"
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v2
