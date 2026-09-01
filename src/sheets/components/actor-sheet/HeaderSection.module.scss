@@ -1,0 +1,79 @@
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 1rem;
+}
+
+.nameAndColor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+
+  .charName {
+    font-size: 2.5rem;
+    color: var(--theme-color);
+    font-family: 'Special Elite', monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid var(--theme-color) !important;
+    border-radius: 0 !important;
+    width: 100%;
+    max-width: 400px;
+    letter-spacing: 2px;
+    
+    /* CORREÇÕES PARA O NOME NÃO FICAR COMIDO */
+    line-height: 1.2;
+    padding-bottom: 4px;
+    height: auto; 
+
+    &:focus { box-shadow: none; outline: none; }
+  }
+
+  .colorPicker {
+    width: 35px; 
+    height: 35px; 
+    border: none; 
+    background: transparent; 
+    cursor: pointer; 
+    padding: 0;
+  }
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #bbb;
+  font-weight: bold;
+
+  .headerInput {
+    width: 120px;
+    background: transparent !important;
+    color: var(--theme-color);
+    border: none !important;
+    border-bottom: 1px dashed var(--theme-color) !important;
+    text-align: center;
+    font-weight: bold;
+    font-family: inherit;
+    &:focus { box-shadow: none; outline: none; }
+  }
+
+  .lvlText { font-size: 0.9rem; margin-top: 4px; }
+
+  .levelInput {
+    width: 45px;
+    background: var(--theme-color) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    text-align: center;
+    font-weight: bold;
+    font-family: inherit;
+    &:focus { box-shadow: none; outline: none; }
+  }
+}

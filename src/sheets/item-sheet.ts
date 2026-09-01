@@ -5,7 +5,8 @@ import { ItemSheetApp } from "./components/ItemSheetApp";
 export class ItemSheet extends foundry.applications.sheets.ItemSheetV2 {
   static DEFAULT_OPTIONS = {
     classes: ["fvtt-ts-react-boilerplate", "sheet", "item"],
-    position: { width: 480, height: 360 }
+    window: { resizable: true }, // Permite redimensionar a janela
+    position: { width: 520, height: 600 } // <-- Altura aumentada para caber o editor
   };
 
   #root: Root | null = null;

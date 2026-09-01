@@ -1,31 +1,47 @@
 {
-  "id": "fvtt-ts-react-boilerplate",
-  "version": "0.8.2",
-  "title": "FVTT TS+React Boilerplate",
+  "id": "ordemparanormal-v2",
+  "version": "0.0.1",
+  "title": "Ordem Paranormal II",
   "url": "",
-  "description": "A TypeScript + React + Vite boilerplate for Foundry VTT V14 system development",
+  "description": "Sistema para Ordem Paranormal II",
   "license": "LICENSE.txt",
   "authors": [
     {
-      "name": "Nyukhu",
+      "name": "ari123rm",
       "url": "https://foundryvtt.com",
       "flags": {}
     }
   ],
-  "esmodules": ["dist/system.mjs"],
-  "styles": ["dist/style.css"],
   "languages": [
     {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json",
-      "flags": {}
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "esmodules": ["dist/system.mjs"],
+  "styles": ["dist/style.css"],
+  "packs": [
+    {
+      "name": "habilidades",
+      "label": "Habilidades e Poderes",
+      "path": "packs/habilidades",
+      "type": "Item",
+      "system": "ordemparanormal-v2"
     },
     {
-      "lang": "fr",
-      "name": "Français",
-      "path": "lang/fr.json",
-      "flags": {}
+      "name": "fichas",
+      "label": "Fichas de Personagem",
+      "path": "packs/fichas",
+      "type": "Actor",
+      "system": "ordemparanormal-v2"
+    },
+    {
+      "name": "campanhas",
+      "label": "Campanhas",
+      "path": "packs/campanhas",
+      "type": "Adventure",
+      "system": "ordemparanormal-v2"
     }
   ],
   "documentTypes": {
@@ -34,6 +50,9 @@
     },
     "Item": {
       "item": {}
+    },
+    "JournalEntryPage": {
+      "poi": {}
     }
   },
   "compatibility": {

@@ -1,0 +1,197 @@
+.skillsSection {
+  margin-top: 1rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  
+  .skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+  }
+
+  .themeBadge {
+    background-color: var(--theme-color);
+    color: white;
+    font-weight: bold;
+    padding: 4px 12px;
+    display: inline-block;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .skillRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.4rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid #222;
+
+    .rollableName {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: #e0e0e0;
+      &:hover { color: white; text-shadow: 0 0 6px var(--theme-color); }
+    }
+
+    .subSelectWrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .subSelectDropdown {
+        appearance: auto !important; /* Mantém a setinha padrão para baixo do navegador */
+        -webkit-appearance: menulist !important;
+        background: transparent !important;
+        color: var(--theme-color) !important;
+        border: none !important;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2) !important;
+        font-family: inherit;
+        font-size: 0.75rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0 4px;
+        text-align: center;
+        text-align-last: center; /* Centraliza o texto no select */
+        width: auto;
+        max-width: 110px;
+
+        &:focus {
+          outline: none !important;
+          border-bottom-color: var(--theme-color) !important;
+        }
+
+        option {
+          background: #1a1a1a;
+          color: white;
+        }
+      }
+    }
+
+    /* Espaçador invisível para manter a altura dos cards de perícias alinhados */
+    .emptySubPlaceholder {
+      height: 18px;
+    }
+
+    /* Container elegante com setinhas para a Aptidão */
+    .aptidaoInlineHeader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+      white-space: nowrap;
+
+      .rollableName {
+        font-size: 0.85rem;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        &:hover { color: white; text-shadow: 0 0 6px var(--theme-color); }
+      }
+
+      .subSelectInline {
+        appearance: auto !important;
+        -webkit-appearance: menulist !important;
+        background: transparent !important;
+        color: var(--theme-color) !important;
+        border: none !important;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2) !important;
+        font-family: inherit;
+        font-size: 0.7rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0;
+        text-align: left;
+        width: auto;
+        max-width: 95px;
+
+        &:focus {
+          outline: none !important;
+          border-bottom-color: var(--theme-color) !important;
+        }
+
+        option {
+          background: #1a1a1a;
+          color: white;
+        }
+      }
+    }
+
+    .skillControlsHorizontal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .baseSelectorWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.1rem;
+
+      .plusSign { color: #666; font-weight: bold; font-size: 1rem; }
+
+      .dimmedDice {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+
+        .diceBgIcon {
+          position: absolute;
+          font-size: 1.7rem;
+          color: #444;
+          opacity: 0.9;
+          z-index: 1;
+          font-weight: 900 !important;
+        }
+
+        .staticDiceValue {
+          position: relative;
+          z-index: 2;
+          color: #ccc;
+          font-weight: bold;
+          font-size: 0.85rem;
+          text-shadow: 1px 1px 1px black;
+        }
+      }
+
+      select.baseSelect {
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        background: transparent !important;
+        color: #777 !important;
+        border: none !important;
+        border-bottom: 1px dashed #444 !important;
+        font-family: inherit;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0; 
+        text-align: center; 
+        width: 34px;
+        margin-left: 0.1rem;
+        
+        &:focus { 
+          outline: none !important; 
+          box-shadow: none !important;
+          color: var(--theme-color) !important; 
+          border-bottom-color: var(--theme-color) !important; 
+        }
+        option { background: #1a1a1a; color: white; }
+      }
+    }
+  }
+}

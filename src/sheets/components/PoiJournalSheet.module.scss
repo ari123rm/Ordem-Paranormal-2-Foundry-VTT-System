@@ -1,0 +1,69 @@
+.poiContainer {
+  display: flex;
+  flex-direction: column;
+  background: #d4d4d4;
+  height: 100%;
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contentWrapper {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.poiDescription {
+  display: flex; 
+  gap: 1.5rem; 
+  margin-top: 2rem; 
+  background: #dcdcdc; 
+  padding: 1.5rem; 
+  border-radius: 8px;
+  color: #1a1a1a;
+
+  .iconCol i { 
+    font-size: 3rem; 
+    color: #333; 
+  }
+  
+  .editorCol {
+    flex: 1;
+    color: #1a1a1a;
+
+    // Garante que o texto e os HEADERS fiquem escuros no modo leitura e edição
+    :global(.editor-content), div, prose-mirror {
+      color: #1a1a1a !important;
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #1a1a1a !important;
+        border-bottom-color: #bbb; // Deixa a linha divisória nativa do Foundry sutil e visível
+      }
+    }
+
+    prose-mirror { 
+      background: transparent; 
+      color: #1a1a1a; 
+      font-family: 'Georgia', serif; 
+      font-size: 1.05rem; 
+      border: none; 
+      min-height: 200px; 
+    }
+  }
+}
+.greenHighlight {
+    background: #aae0a1;
+    color: #1a1a1a;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: 900;
+  }
+
+  .renderedInfo {
+    color: #1a1a1a;
+    line-height: 1.4;
+    white-space: pre-wrap; /* Mantém as quebras de linha dadas no Enter! */
+    
+    strong, b {
+      font-weight: 900;
+      color: #1a1a1a;
+    }
+  }

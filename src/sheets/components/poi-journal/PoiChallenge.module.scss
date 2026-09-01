@@ -1,0 +1,142 @@
+.challengesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  .addChallengeBlockBtn {
+    width: 100%;
+    padding: 8px;
+    background: #d89f8d;
+    border: 1px dashed #6c5a52;
+    font-weight: bold;
+    color: #1a1a1a;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    &:hover { background: #c88f7d; }
+  }
+}
+
+.challengeTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border-top: 2px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  background: #d89f8d;
+  color: #1a1a1a;
+
+  td { border: 1px solid #6c5a52; padding: 6px 10px; }
+
+  .challengeHeaderCell {
+    width: 30%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem; // Fonte ligeiramente menor e mais delicada
+    vertical-align: middle;
+    
+    // Centraliza perfeitamente o ícone do cadeado
+    i { 
+      font-size: 1.5rem; 
+      margin-bottom: 4px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    input { 
+      width: 100%; 
+      background: transparent; 
+      border: 1px dashed rgba(0,0,0,0.3); 
+      color: #1a1a1a; 
+      text-align: center; 
+      font-weight: bold; 
+      font-size: 0.85rem;
+      margin-bottom: 4px; 
+    }
+
+    div {
+      line-height: 1.25;
+    }
+  }
+
+  .challengeTaskCell {
+    width: 62%;
+    font-size: 0.95rem;
+    font-weight: normal; /* Removemos o negrito global! */
+    line-height: 1.4;
+
+    .taskRow {
+      display: flex; justify-content: space-between; align-items: flex-start; /* Alinha o ícone de lixeira no topo */
+      
+      .taskTextarea { 
+        flex: 1; 
+        background: transparent; 
+        border: 1px dashed rgba(0,0,0,0.3); 
+        color: #1a1a1a; 
+        font-family: inherit; 
+        font-size: 0.95rem; 
+        padding: 6px; 
+        resize: vertical;
+        min-height: 60px; /* Dá espaço bom para digitar parágrafos */
+        line-height: 1.4;
+        border-radius: 4px;
+        &:focus { outline: none; border-color: #555; background: rgba(255,255,255,0.1); }
+      }
+
+      i { color: #882020; cursor: pointer; margin-left: 10px; margin-top: 8px; }
+    }
+
+    .renderedTask {
+      padding: 4px 2px;
+      color: #1a1a1a;
+      
+      strong, b {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #1a1a1a;
+      }
+    }
+
+    .emptyTaskText { font-size: 0.8rem; font-style: italic; opacity: 0.7; }
+  }
+
+  .challengeActionCell {
+    width: 8%;
+    text-align: center;
+    vertical-align: middle;
+    background: rgba(136, 32, 32, 0.15);
+
+    .delChalBtn {
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 6px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      &:hover { background: #b71c1c; }
+    }
+  }
+
+  .challengeFooterCell {
+    background: rgba(0,0,0,0.05);
+    text-align: right;
+    padding: 4px 8px;
+  }
+
+  .addTaskBtn { 
+    background: transparent; 
+    border: 1px dashed #6c5a52; 
+    color: #1a1a1a; 
+    font-weight: bold; 
+    font-size: 0.85rem; 
+    cursor: pointer; 
+    width: 100%; 
+    padding: 4px;
+    text-align: center;
+    &:hover { background: rgba(0,0,0,0.1); }
+  }
+}

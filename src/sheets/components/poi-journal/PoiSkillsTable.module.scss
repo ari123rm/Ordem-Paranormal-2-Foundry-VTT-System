@@ -1,0 +1,128 @@
+.poiTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border-top: 3px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  
+  strong, b {
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+  
+  th {
+    background: #e0e0e0;
+    color: #1a1a1a;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid #999;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  td { 
+    border: 1px solid #999; 
+    padding: 8px; 
+    color: #1a1a1a; 
+  }
+
+  .centerCol { 
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 1.1rem; 
+    vertical-align: top;
+    
+    .dtEditWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+
+      input { 
+        width: 55px; 
+        text-align: center; 
+        background: rgba(255,255,255,0.5); 
+        border: 1px solid rgba(0,0,0,0.3); 
+        border-radius: 4px;
+        font-weight: bold; 
+        color: #1a1a1a;
+        padding: 2px;
+      }
+
+      .addDtBtnInline {
+        background: rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        color: #1a1a1a;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 3px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        &:hover { background: rgba(0, 0, 0, 0.25); }
+      }
+    }
+  }
+
+  .infoCol span { font-size: 0.95rem; line-height: 1.4; color: #1a1a1a; }
+  
+  textarea {
+    width: 100%;
+    min-height: 40px;
+    background: rgba(255,255,255,0.4);
+    border: 1px dashed rgba(0,0,0,0.4);
+    padding: 6px;
+    resize: vertical;
+    color: #1a1a1a;
+    font-family: inherit;
+  }
+
+  .actionCol {
+    text-align: center;
+    vertical-align: middle;
+    .delRowBtn {
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      &:hover { background: #b71c1c; }
+    }
+  }
+
+  /* Cores Pastéis Exatas do Livro */
+  tr.color-cyan { background-color: #a6d8d8; }
+  tr.color-green { background-color: #c5e1a5; }
+  tr.color-yellow { background-color: #e6dca5; }
+  tr.color-purple { background-color: #bca3c4; }
+  tr.color-red { background-color: #eab1b1; }
+  tr.color-orange { background-color: #f3c49e; }
+  tr.color-blue { background-color: #b1cbea; }
+  tr.color-gray { background-color: #b1bac5; }
+
+  .skillCell {
+    vertical-align: middle;
+    .skillText { font-weight: bold; font-size: 1.1rem; color: #1a1a1a; }
+    .customLabel { font-size: 0.8rem; font-weight: normal; color: #333; }
+    
+    .editSkills {
+      display: flex; flex-direction: column; gap: 6px;
+      select { padding: 4px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.3); background: rgba(255,255,255,0.6); font-weight: bold; color: #1a1a1a; }
+      input { background: rgba(255,255,255,0.4); border: 1px solid rgba(0,0,0,0.2); padding: 4px; font-size: 0.8rem; color: #1a1a1a; }
+      
+      .skillTags {
+        display: flex; flex-wrap: wrap; gap: 4px;
+        .tag { background: rgba(0,0,0,0.15); padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: #1a1a1a; i { cursor: pointer; color: #c62828; margin-left: 4px; } }
+      }
+    }
+  }
+}
+
+.addBlockBtn {
+  width: 100%; padding: 8px; margin-top: 10px; background: #e0e0e0; border: 1px dashed #999; font-weight: bold; color: #1a1a1a; cursor: pointer;
+  &:hover { background: #d4d4d4; }
+}

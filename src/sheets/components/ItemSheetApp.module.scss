@@ -1,13 +1,166 @@
-.sheet {
+.itemSheet {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 0.5rem;
+  height: 100%;
+  color: #e0e0e0;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-y: auto; // <-- Garante que a ficha tenha barra de rolagem se necessário
 }
 
-.label {
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+  img { width: 50px; height: 50px; border-radius: 4px; cursor: pointer; border: 1px solid #444; }
+  
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #555;
+    color: white;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: bold;
+    &:focus { outline: none; border-bottom-color: white; }
+  }
+}
+
+.configGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: bold;
+
+    input, select {
+      background: rgba(0,0,0,0.3);
+      color: white;
+      border: 1px solid #444;
+      padding: 0.5rem;
+      margin-top: 0.2rem;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+  }
+}
+
+.usesConfig {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0,0,0,0.2);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px dashed #444;
+  
+  input { width: 60px; text-align: center; background: #111; color: white; border: 1px solid #555; }
+}
+
+.editorPlaceholder {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
-  text-transform: capitalize;
+  label { font-weight: bold; color: #aaa; margin-bottom: 0.3rem; }
+  textarea {
+    flex: 1;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: 1px solid #444;
+    padding: 0.5rem;
+    font-family: inherit;
+    resize: none;
+  }
+}
+
+.costsSection {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed #444;
+  border-radius: 4px;
+  padding: 0.5rem;
+  
+  .costsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+
+    .addBtn {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 2px 8px;
+      &:hover { background: #1b5e20; }
+    }
+  }
+
+  .costsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .costRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #111;
+    padding: 4px;
+    border-radius: 4px;
+
+    input { width: 50px; background: #222; color: white; border: 1px solid #444; text-align: center; }
+    select { flex: 1; background: #222; color: white; border: 1px solid #444; }
+    .deleteBtn { background: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer; &:hover { background: #d32f2f; } }
+  }
+
+  .emptyCost { color: #666; font-size: 0.85rem; font-style: italic; }
+}
+
+.editorContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  margin-top: 1rem;
+  
+  label { 
+    font-weight: bold; 
+    color: var(--theme-color); 
+    margin-bottom: 0.5rem; 
+    border-bottom: 1px dashed #333;
+    padding-bottom: 0.2rem;
+  }
+  
+  .proseWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    /* Mira diretamente no componente Web Nativo do Foundry */
+    prose-mirror {
+      flex: 1;
+      background: #e6e6e6; // Fundo claro clássico
+      color: #191813;
+      border: 2px solid #333;
+      border-radius: 4px;
+      padding: 0.5rem;
+      overflow-y: auto;
+      
+      // Deixa o toolbar de edição escuro para combinar com a ficha
+      --prosemirror-menu-background: #1a1a1a;
+      --prosemirror-menu-color: #e0e0e0;
+    }
+  }
 }

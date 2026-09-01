@@ -1,0 +1,33 @@
+.themeBadge {
+  background-color: var(--theme-color);
+  color: white;
+  font-weight: bold;
+  padding: 4px 12px;
+  display: inline-block;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.attributesBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-end;
+
+  .attrRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .rollableName {
+    cursor: pointer;
+    font-weight: bold;
+    transition: text-shadow 0.2s, color 0.2s;
+    &:hover { color: white; text-shadow: 0 0 8px var(--theme-color); }
+  }
+}

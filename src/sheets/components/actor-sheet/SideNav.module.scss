@@ -1,0 +1,29 @@
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  background-color: #111;
+  border-left: 2px solid #222;
+  padding-top: 1.5rem;
+  gap: 0.5rem;
+  flex-shrink: 0;
+
+  .navBtn {
+    background: transparent;
+    border: none;
+    color: #555;
+    font-size: 1.5rem;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+
+    &:hover { color: #ccc; }
+    
+    &.active {
+      color: var(--theme-color);
+      border-left: 3px solid var(--theme-color);
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+}

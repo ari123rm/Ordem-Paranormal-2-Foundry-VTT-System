@@ -5,7 +5,14 @@ import { CharacterSheetApp } from "./components/CharacterSheetApp";
 export class CharacterSheet extends foundry.applications.sheets.ActorSheetV2 {
   static DEFAULT_OPTIONS = {
     classes: ["fvtt-ts-react-boilerplate", "sheet", "actor"],
-    position: { width: 600, height: 480 }
+    // O Foundry V12 (AppV2) usa esse bloco para definir o tamanho inicial
+    window: {
+      resizable: true, // Garante que o jogador pode arrastar as bordas
+    },
+    position: { 
+      width: 950, 
+      height: 750 
+    }
   };
 
   #root: Root | null = null;

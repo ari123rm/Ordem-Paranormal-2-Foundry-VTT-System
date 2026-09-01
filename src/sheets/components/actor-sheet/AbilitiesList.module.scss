@@ -1,0 +1,160 @@
+.abilitiesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 0.5rem;
+}
+
+.emptyMsg {
+  color: #666;
+  text-align: center;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.abilityCard {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 1rem;
+  border-left: 4px solid var(--theme-color);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px dashed #333;
+  padding-bottom: 0.5rem;
+
+  .badgeAndName {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .themeBadge {
+    background-color: var(--theme-color);
+    color: white;
+    font-weight: bold;
+    padding: 4px 16px;
+    display: inline-block;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: filter 0.2s;
+    &:hover { filter: brightness(1.2); }
+  }
+
+  .costText {
+    color: var(--theme-color);
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .favActive {
+      color: #ffc107; // Amarelo clássico de favorito
+      cursor: pointer;
+      transition: transform 0.2s;
+      &:hover { transform: scale(1.2); }
+    }
+    .favInactive {
+      color: #555;
+      cursor: pointer;
+      transition: color 0.2s;
+      &:hover { color: #ffc107; }
+    }
+  }
+
+  .deleteIcon {
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s;
+    &:hover { color: #f44336; }
+  }
+}
+
+/* CAIXINHAS DE USO (EX: ÍMPETO) */
+.usesTrack {
+  display: flex;
+  gap: 4px;
+
+  .useBox {
+    width: 20px;
+    height: 12px;
+    background: #111;
+    border: 2px solid var(--theme-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: skew(-10deg); // Dá aquela leve inclinada estilosa
+
+    &.filled {
+      background: var(--theme-color);
+      box-shadow: 0 0 5px var(--theme-color);
+    }
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.cardBody {
+  margin-top: 0.5rem;
+  
+  .descriptionBox {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 0.8rem;
+    color: #dedede;
+    font-family: var(--font-primary), 'Georgia', serif; // Fonte serifada parecida com a do livro
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    /* 1. Faz com que todo texto em Negrito fique com a cor do tema (Vermelho) */
+    strong, b {
+      color: var(--theme-color, #c52222);
+      font-weight: bold;
+    }
+
+    /* 2. Formatação das listas para ficarem igual ao livro */
+    ul {
+      margin: 0.8rem 0;
+      padding-left: 1.5rem;
+      list-style-type: square; /* Deixa o bullet quadrado/diamante */
+      
+      li {
+        margin-bottom: 0.5rem;
+        
+        /* Ajuste para alinhar os ícones dentro do bullet point */
+        i {
+          color: var(--theme-color, #c52222);
+          margin-right: 3px;
+          font-size: 0.9em;
+        }
+      }
+    }
+
+    p { margin-bottom: 0.8rem; }
+    p:last-child { margin-bottom: 0; }
+  }
+}
+
+.editIcon, .deleteIcon {
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+  }
+  .editIcon:hover { color: #fff; }
+  .deleteIcon:hover { color: #f44336; }
