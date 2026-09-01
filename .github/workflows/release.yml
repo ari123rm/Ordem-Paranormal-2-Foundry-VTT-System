@@ -1,0 +1,28 @@
+name: Release Foundry VTT System
+
+on:
+  push:
+    tags:
+      - 'v*' # A action vai rodar automaticamente quando você criar uma tag (ex: v1.0.0)
+
+jobs:
+  build-and-release:
+    runs-on: self-hosted
+    permissions:
+      contents: write # Permissão necessária para a Action criar a release
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build system.zip
+        run: |
+          # Compacta os arquivos do sistema na raiz do zip, ignorando pastas do git/github
+          zip -r system.zip . -x ".git/*" -x ".github/*" -x ".gitignore"
+
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            system.zip
+            system.json
