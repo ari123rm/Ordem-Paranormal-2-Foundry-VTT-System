@@ -50,7 +50,7 @@ export const SkillsGrid = ({ system, updateField, actor }: any) => {
                   </select>
                 </div>
               ) : (
-                <span className={styles.rollableName} onClick={() => rollDice(actor, p.nome, attrValue, skillData.value)}>
+                <span className={styles.rollableName} onClick={() => rollDice(actor, p.nome, skillData.base, skillData.value)}>
                   {p.nome.toUpperCase()}
                 </span>
               )}

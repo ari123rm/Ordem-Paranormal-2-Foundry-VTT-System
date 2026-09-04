@@ -7,7 +7,7 @@ export const AttributeSection = ({ system, updateField, actor }: any) => (
     <div className={styles.themeBadge}>ATRIBUTOS</div>
     {(["fisico", "mente", "emocao"] as const).map((attr) => (
       <div key={attr} className={styles.attrRow}>
-        <span className={styles.rollableName} onClick={() => rollDice(actor, attr, system.atributos[attr], 4)}>
+        <span className={styles.rollableName} onClick={() => rollDice(actor, attr, attr, null)}>
           {attr.toUpperCase()}
         </span>
         <DiceSelect value={system.atributos[attr]} onChange={(val: number) => updateField(`atributos.${attr}`, val)} />
