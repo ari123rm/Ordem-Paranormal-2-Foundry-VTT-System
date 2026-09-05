@@ -1,0 +1,40 @@
+{
+  "name": "Avaliação",
+  "type": "habilidade",
+  "_id": "vYrPpuaxKFw9QyGe",
+  "img": "icons/skills/trades/academics-investigation-study-blue.webp",
+  "system": {
+    "description": "<p>Você pode gastar <strong>uma ação</strong> e <strong>2 PD</strong> para observar um ser ou um ambiente. Você recebe <i class=\"fas fa-dice-d4\"></i><i class=\"fas fa-dice-d4\"></i> que pode usar em testes relativos àquele ser ou ambiente (você pode usá-los como quiser, recebendo +<i class=\"fas fa-dice-d4\"></i><i class=\"fas fa-dice-d4\"></i> em um teste ou +<i class=\"fas fa-dice-d4\"></i> em dois testes). Você não pode acumular mais do que dois dados bônus por esta habilidade.</p>",
+    "costs": [
+      {
+        "amount": 2,
+        "type": "PD"
+      }
+    ],
+    "isFavorite": true,
+    "uses": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.5",
+    "createdTime": 1788649749058,
+    "modifiedTime": 1788649749058,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "sort": 100000,
+  "_key": "!items!vYrPpuaxKFw9QyGe"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Foco Emocional",
+  "type": "habilidade",
+  "_id": "EM6wqXWLqtHwlLtO",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-small-teal.webp",
+  "system": {
+    "description": "<p>Quando faz um <strong>teste emocional</strong>, você pode gastar <strong>2 PD</strong> para receber <strong>+1d4<i class=\"fas fa-dice-d4\"></i></strong> no teste.</p>",
+    "costs": [
+      {
+        "amount": 2,
+        "type": "PD"
+      }
+    ],
+    "isFavorite": true,
+    "uses": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.5",
+    "createdTime": 1788649731379,
+    "modifiedTime": 1788649732853,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "sort": 500000,
+  "_key": "!items!EM6wqXWLqtHwlLtO"
+}

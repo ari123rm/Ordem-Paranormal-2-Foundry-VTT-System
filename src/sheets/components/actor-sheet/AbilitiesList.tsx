@@ -21,11 +21,25 @@ export const AbilitiesList = ({ actor }: { actor: Actor.Implementation }) => {
     actor.deleteEmbeddedDocuments("Item", [itemId]);
   };
 
+  const handleDragStart = (e: React.DragEvent, item: any) => {
+    // O Foundry exige exatamente esse formato JSON para reconhecer o item
+    const dragData = {
+      type: "Item",
+      uuid: item.uuid
+    };
+    e.dataTransfer.setData("text/plain", JSON.stringify(dragData));
+  };
+
   return (
     <div className={styles.abilitiesContainer}>
       {items.length === 0 && <p className={styles.emptyMsg}>Arraste Perfis, Ocupações ou Habilidades para cá.</p>}
       {items.map((item: any) => (
-        <div key={item.id} className={styles.abilityCard}>
+        <div 
+          key={item.id} 
+          className={styles.abilityCard}
+          draggable={true} // <-- Ativa o arraste
+          onDragStart={(e) => handleDragStart(e, item)} // <-- Dispara o payload
+        >
           <div className={styles.cardHeader}>
             <div className={styles.badgeAndName}>
               <div 
