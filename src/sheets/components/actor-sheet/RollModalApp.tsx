@@ -3,14 +3,13 @@ import styles from "./RollModalApp.module.scss";
 
 export const RollModalApp = ({ actor, skillName, initialAttrKey, initialSkillValue, onConfirm, onCancel }: any) => {
   const isAttributeOnly = skillName.toLowerCase() === initialAttrKey.toLowerCase();
-  
-  // Captura a cor do tema do ator
   const themeColor = actor?.system?.themeColor || "#c52222";
   
   const [selectedAttrKey, setSelectedAttrKey] = useState(initialAttrKey);
   const [selectedAttrValue, setSelectedAttrValue] = useState(actor.system.atributos[initialAttrKey]);
   const [selectedSkillValue, setSelectedSkillValue] = useState(initialSkillValue || 4);
   const [bonusDice, setBonusDice] = useState<number[]>([]);
+  const [dt, setDt] = useState(""); // <-- Novo state para a DT
 
   useEffect(() => {
     setSelectedAttrValue(actor.system.atributos[selectedAttrKey]);
@@ -43,15 +42,16 @@ export const RollModalApp = ({ actor, skillName, initialAttrKey, initialSkillVal
     <div className={styles.modalContainer} style={{ "--theme-color": themeColor } as React.CSSProperties}>
       <header className={styles.header}>
         <h2>{skillName}</h2>
+        {/* <-- Input de DT adicionado de volta aqui */}
+        <div className={styles.dtBox}>
+          <span>DT</span>
+          <input type="number" value={dt} onChange={(e) => setDt(e.target.value)} placeholder="-" />
+        </div>
       </header>
 
       <section className={styles.baseDiceSection}>
         <div className={styles.diceRow}>
-          <select 
-            className={styles.labelSelect} 
-            value={selectedAttrKey} 
-            onChange={(e) => setSelectedAttrKey(e.target.value)}
-          >
+          <select className={styles.labelSelect} value={selectedAttrKey} onChange={(e) => setSelectedAttrKey(e.target.value)}>
             <option value="fisico">Físico</option>
             <option value="mente">Mente</option>
             <option value="emocao">Emoção</option>
@@ -80,7 +80,6 @@ export const RollModalApp = ({ actor, skillName, initialAttrKey, initialSkillVal
       <section className={styles.bonusSection}>
         <div className={styles.bonusHeader}>
           <span className={styles.title}>BÔNUS SITUACIONAL</span>
-          {/* Usa a variável CSS dinâmica para o aviso de limite */}
           <span className={styles.counter} style={{ color: totalDice === maxDice ? 'var(--theme-color)' : 'white' }}>
             Dados {totalDice} / {maxDice}
           </span>
@@ -110,10 +109,12 @@ export const RollModalApp = ({ actor, skillName, initialAttrKey, initialSkillVal
 
       <footer className={styles.footer}>
         <button className={styles.btnCancel} onClick={onCancel}>Cancelar</button>
+        {/* <-- Repassando a DT na confirmação */}
         <button className={styles.btnRoll} onClick={() => onConfirm({ 
             finalAttrValue: selectedAttrValue, 
             finalSkillValue: isAttributeOnly ? null : selectedSkillValue, 
-            bonusDice 
+            bonusDice,
+            dt: dt ? Number(dt) : null 
           })}>
           <i className="fas fa-dice-d20"></i> Rolar
         </button>

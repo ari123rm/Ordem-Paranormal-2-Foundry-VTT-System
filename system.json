@@ -29,17 +29,10 @@
       "system": "ordemparanormal-v2"
     },
     {
-      "name": "fichas",
-      "label": "Fichas de Personagem",
-      "path": "packs/fichas",
-      "type": "Actor",
-      "system": "ordemparanormal-v2"
-    },
-    {
-      "name": "campanhas",
-      "label": "Campanhas",
-      "path": "packs/campanhas",
-      "type": "Adventure",
+      "name": "perfis",
+      "label": "Perfis",
+      "path": "packs/perfis",
+      "type": "Item",
       "system": "ordemparanormal-v2"
     }
   ],
