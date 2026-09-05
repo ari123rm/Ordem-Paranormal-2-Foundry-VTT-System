@@ -2,8 +2,8 @@ name: Release Foundry VTT System
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   build-and-release:
@@ -14,6 +14,21 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Extrair versão do system.json
+        id: extract_version
+        run: |
+          VERSION=$(jq -r .version system.json)
+          echo "VERSION=v$VERSION" >> $GITHUB_ENV
+          echo "RAW_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Versão detectada: v$VERSION"
+
+      - name: Extrair notas do Changelog
+        id: extract_changelog
+        run: |
+          # O awk recorta o bloco de texto exato da versão atual
+          awk '/^## \['"${RAW_VERSION}"'\]/ {flag=1; next} /^## \[/ {if(flag) exit} flag' CHANGELOG.md > notes.md
+          echo "Notas extraídas com sucesso."
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,6 +49,9 @@ jobs:
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ env.VERSION }}
+          name: Release ${{ env.VERSION }}
+          body_path: notes.md # Lê o arquivo que o awk gerou e injeta no release
           files: |
             system.zip
             system.json
