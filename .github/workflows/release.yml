@@ -27,7 +27,7 @@ jobs:
         id: extract_changelog
         run: |
           # O awk recorta o bloco de texto exato da versão atual
-          awk '/^## \['"${RAW_VERSION}"'\]/ {flag=1; next} /^## \[/ {if(flag) exit} flag' CHANGELOG.md > notes.md
+          awk '/^## \['"${RAW_VERSION}"'\]/ {flag=1; next} /^## \[/ {if(flag) exit} flag' changelog.md > notes.md
           echo "Notas extraídas com sucesso."
 
       - name: Setup Node.js
