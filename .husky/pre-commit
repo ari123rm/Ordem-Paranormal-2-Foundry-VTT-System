@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "📦 Extraindo itens do Foundry (LevelDB -> JSON)..."
+npm run unpack
+
+echo "➕ Adicionando JSONs extraídos ao commit..."
+git add src/packs/
