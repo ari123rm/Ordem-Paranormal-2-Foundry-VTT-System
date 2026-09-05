@@ -1,0 +1,2 @@
+echo "➕ Adicionando JSONs extraídos ao commit..."
+git add src/packs/

@@ -1,0 +1,35 @@
+{
+  "name": "Esforço e Suor",
+  "type": "habilidade",
+  "_id": "3KclwfTHGtC1XvZH",
+  "img": "icons/magic/control/buff-strength-muscle-damage-orange.webp",
+  "system": {
+    "description": "<p>Você possui uma perícia física aumentada para <strong>1d6</strong><i class=\"fas fa-dice-d6\"></i>.</p>",
+    "costs": [],
+    "isFavorite": true,
+    "uses": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.5",
+    "createdTime": 1788649729866,
+    "modifiedTime": 1788649732853,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "sort": 400000,
+  "_key": "!items!3KclwfTHGtC1XvZH"
+}

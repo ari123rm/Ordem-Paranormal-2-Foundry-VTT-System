@@ -57,8 +57,8 @@ export function CharacterSheetApp({ actor }: { actor: Actor.Implementation }) {
                           <div className={styles.favItemRight}>
                             {formatCosts(item.system.costs) && <span className={styles.favCost}>{formatCosts(item.system.costs)}</span>}
                             
-                            {/* Inputs editáveis para os usos (ex: 3/3) */}
-                            {item.system.uses.max > 0 && (
+                            {/* <-- ADICIONADA A INTERROGAÇÃO AQUI */}
+                            {item.system.uses?.max > 0 && (
                               <div className={styles.favUses} onClick={(e) => e.stopPropagation()}>
                                 <input 
                                   type="number" 
@@ -74,10 +74,9 @@ export function CharacterSheetApp({ actor }: { actor: Actor.Implementation }) {
                               </div>
                             )}
                             
-                            {/* Botão de abrir edição completa */}
                             <i 
                               className={`fas fa-edit ${styles.favEdit}`} 
-                              onClick={(e) => { e.stopPropagation(); item.sheet.render(true); }}
+                              onClick={(e) => { e.stopPropagation(); item.sheet.render(true); }} 
                               title="Editar Habilidade"
                             ></i>
                           </div>

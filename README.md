@@ -2,6 +2,8 @@
 
 > **Aviso Legal:** Este é um conteúdo não oficial, publicado sob a Licença da Comunidade de Ordem Paranormal. Contém material gerado por inteligência artificial. Este é um sistema comunitário não oficial para Foundry Virtual Tabletop, criado para acompanhar o desenvolvimento das regras públicas de playtest de Ordem Paranormal 2. O projeto está em estágio inicial. As regras do playtest ainda estão em desenvolvimento e podem mudar antes da versão final do jogo.
 
+[Ordem Paranormal Selo de Comunidade](./assets/Ordem%20Paranormal%20Selo%20Branco.png)
+
 ## Status
 
 **Release Pública em Desenvolvimento**

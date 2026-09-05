@@ -1,0 +1,35 @@
+{
+  "name": "Conhecimento Técnico",
+  "type": "habilidade",
+  "_id": "tOuceAF49AEU5apI",
+  "img": "icons/tools/laboratory/microscope.webp",
+  "system": {
+    "description": "<p>Você possui uma perícia mental aumentada para <strong>1d6<i class=\"fas fa-dice-d6\"></i></strong>.</p>",
+    "costs": [],
+    "isFavorite": true,
+    "uses": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.5",
+    "createdTime": 1788649728696,
+    "modifiedTime": 1788649732853,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "sort": 300000,
+  "_key": "!items!tOuceAF49AEU5apI"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Prontidão",
+  "type": "habilidade",
+  "_id": "WBYhag6FXxu6k5dU",
+  "img": "icons/skills/movement/figure-running-gray.webp",
+  "system": {
+    "description": "<p>No início de qualquer conflito, você pode gastar <strong>3 PD</strong>. Se fizer isso, <strong>ganha uma rodada</strong> na qual pode agir antes dos demais personagens e NPCs.</p>",
+    "costs": [
+      {
+        "amount": 3,
+        "type": "PD"
+      }
+    ],
+    "isFavorite": true,
+    "uses": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.5",
+    "createdTime": 1788649736691,
+    "modifiedTime": 1788649736691,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "sort": 0,
+  "_key": "!items!WBYhag6FXxu6k5dU"
+}

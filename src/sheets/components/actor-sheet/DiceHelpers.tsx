@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./DiceHelpers.module.scss";
 import { RollDialog } from "./RollDialog";
+import { buildRollFlavor, getChatImage } from "./ChatHelpers";
 
 export const getDiceIcon = (val: number) => {
   switch(val) {
@@ -14,7 +15,6 @@ export const getDiceIcon = (val: number) => {
   }
 };
 
-// Modificado para aceitar o d20 na ficha principal
 export const DiceSelect = ({ value, onChange }: { value: number, onChange: (v: number) => void }) => (
   <div className={styles.diceSelectWrapper}>
     <i className={`fas ${getDiceIcon(value)} ${styles.diceBgIcon}`}></i>
@@ -24,43 +24,41 @@ export const DiceSelect = ({ value, onChange }: { value: number, onChange: (v: n
   </div>
 );
 
-// A função de rolagem agora lida com 'skillValue' podendo ser null (Atributo Puro)
 export const rollDice = async (actor: any, skillName: string, baseAttrKey: string, skillValue: number | null) => {
-  const rollOptions = await RollDialog.prompt({
-    actor,
-    skillName,
-    initialAttrKey: baseAttrKey,
-    initialSkillValue: skillValue
-  });
-
+  const rollOptions = await RollDialog.prompt({ actor, skillName, initialAttrKey: baseAttrKey, initialSkillValue: skillValue });
   if (!rollOptions) return;
 
-  const { finalAttrValue, finalSkillValue, bonusDice } = rollOptions;
+  const { finalAttrValue, finalSkillValue, bonusDice, dt } = rollOptions;
   const themeColor = actor.system.themeColor || "#c52222";
+  const actorImg = getChatImage(actor);
 
-  let formula = `1d${finalAttrValue}`;
-  
-  if (finalSkillValue) {
-    formula += ` + 1d${finalSkillValue}`;
-  }
-  
+  // Adiciona as categorias entre Colchetes para o Tooltip Nativo (Ex: 1d6[FISICO])
+  let formula = `1d${finalAttrValue}[${baseAttrKey.toUpperCase()}]`;
+  if (finalSkillValue) formula += ` + 1d${finalSkillValue}[${skillName.toUpperCase()}]`;
   if (bonusDice && bonusDice.length > 0) {
-    const bonusString = bonusDice.map((d: number) => `1d${d}`).join(" + ");
-    formula += ` + ${bonusString}`;
+    bonusDice.forEach((d: number, index: number) => {
+      formula += ` + 1d${d}[SITUACIONAL ${index + 1}]`;
+    });
   }
 
   const roll = new Roll(formula);
   await roll.evaluate();
 
-  // Injeta a cor do personagem no chat
-  const flavorText = `
-    <div style="color: ${themeColor}; font-family: 'Special Elite', monospace; font-size: 1.3rem; text-transform: uppercase; border-bottom: 1px dashed ${themeColor}; padding-bottom: 4px;">
-      Teste de ${skillName}
-    </div>
-  `;
+  const diceResults = roll.dice.flatMap(d => d.results ? d.results.map(r => r.result) : []);
+  const ra = Math.max(...diceResults);
+  const rb = Math.min(...diceResults);
+  
+  let isCrit = false;
+  let isCritFail = diceResults.length > 0 && diceResults.every(r => r === 1);
+  const counts: Record<number, number> = {};
+  for (const res of diceResults) {
+    counts[res] = (counts[res] || 0) + 1;
+    if (counts[res] >= 2 && res >= 6) isCrit = true;
+  }
 
-  roll.toMessage({
-    speaker: ChatMessage.getSpeaker({ actor }),
-    flavor: flavorText
-  });
+  const subtitle = finalSkillValue ? `${baseAttrKey.charAt(0).toUpperCase() + baseAttrKey.slice(1)} + ${skillName}` : `${baseAttrKey.charAt(0).toUpperCase() + baseAttrKey.slice(1)} Puro`;
+
+  const flavorText = buildRollFlavor({ skillName, subtitle, total: roll.total, ra, rb, isCrit, isCritFail, dt, isSuccess: dt ? roll.total >= dt : null, themeColor, actorImg });
+
+  roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor }), flavor: flavorText });
 };

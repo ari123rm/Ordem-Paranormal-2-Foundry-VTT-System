@@ -1,6 +1,6 @@
 {
   "id": "ordemparanormal-v2",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "title": "Ordem Paranormal II",
   "description": "Sistema para Ordem Paranormal II",
   "license": "LICENSE.txt",
@@ -29,17 +29,10 @@
       "system": "ordemparanormal-v2"
     },
     {
-      "name": "fichas",
-      "label": "Fichas de Personagem",
-      "path": "packs/fichas",
-      "type": "Actor",
-      "system": "ordemparanormal-v2"
-    },
-    {
-      "name": "campanhas",
-      "label": "Campanhas",
-      "path": "packs/campanhas",
-      "type": "Adventure",
+      "name": "perfis",
+      "label": "Perfis",
+      "path": "packs/perfis",
+      "type": "Item",
       "system": "ordemparanormal-v2"
     }
   ],
@@ -48,7 +41,9 @@
       "character": {}
     },
     "Item": {
-      "item": {}
+      "habilidade": {},
+      "perfil": {},
+      "ocupacao": {}
     },
     "JournalEntryPage": {
       "poi": {}

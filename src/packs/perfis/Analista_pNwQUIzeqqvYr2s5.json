@@ -1,0 +1,37 @@
+{
+  "name": "Analista",
+  "type": "perfil",
+  "_id": "pNwQUIzeqqvYr2s5",
+  "img": "icons/magic/symbols/chevron-elipse-circle-blue.webp",
+  "system": {
+    "description": "<p>Você observa, entende e se prepara, para só então agir. Pode demorar para tomar uma atitude, mas quando o faz, é com a maior precisão possível.</p>",
+    "grants": [
+      {
+        "level": 1,
+        "uuid": "Compendium.ordemparanormal-v2.habilidades.Item.vYrPpuaxKFw9QyGe",
+        "name": "Avaliação"
+      }
+    ],
+    "themeColor": "#4176ba"
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.2",
+    "createdTime": 1788573329995,
+    "modifiedTime": 1788574146992,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "sort": 100000,
+  "_key": "!items!pNwQUIzeqqvYr2s5"
+}
