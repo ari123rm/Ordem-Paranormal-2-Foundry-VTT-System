@@ -41,7 +41,9 @@
       "character": {}
     },
     "Item": {
-      "item": {}
+      "habilidade": {},
+      "perfil": {},
+      "ocupacao": {}
     },
     "JournalEntryPage": {
       "poi": {}

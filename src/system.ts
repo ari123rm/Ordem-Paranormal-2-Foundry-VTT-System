@@ -1,5 +1,5 @@
 import { CharacterData } from "./data/character-data";
-import { ItemData } from "./data/item-data";
+import { HabilidadeData, PerfilData, OcupacaoData } from "./data/item-data";
 import { PoiPageData } from "./data/journal-poi-data"; // <-- Faltou importar
 import { injectStyles } from "./injectStyles";
 import { registerSystemSettings } from "./settings";
@@ -11,7 +11,6 @@ Hooks.once("init", () => {
   registerSystemSettings();
   injectStyles();
   CONFIG.Actor.dataModels.character = CharacterData;
-  CONFIG.Item.dataModels.item = ItemData;
   CONFIG.JournalEntryPage.dataModels.poi = PoiPageData; // <-- Faltou registrar
 
   foundry.applications.apps.DocumentSheetConfig.registerSheet(
@@ -21,12 +20,14 @@ Hooks.once("init", () => {
     { types: ["character"], makeDefault: true }
   );
 
-  foundry.applications.apps.DocumentSheetConfig.registerSheet(
-    Item,
-    "fvtt-ts-react-boilerplate",
-    ItemSheet,
-    { types: ["item"], makeDefault: true }
-  );
+  CONFIG.Item.dataModels.habilidade = HabilidadeData;
+  CONFIG.Item.dataModels.perfil = PerfilData;
+  CONFIG.Item.dataModels.ocupacao = OcupacaoData;
+  
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, "fvtt-ts-react-boilerplate", ItemSheet, { 
+    types: ["habilidade", "perfil", "ocupacao"], 
+    makeDefault: true 
+  });
 
   // <-- Faltou registrar a Ficha do Diário
 
