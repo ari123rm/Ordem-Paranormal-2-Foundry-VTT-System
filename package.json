@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite build --watch",
-    "unpack": "fvtt package unpack -t system -i ./packs -o ./src/packs",
-    "pack": "fvtt package pack -t system -i ./src/packs -o ./packs",
+    "unpack": "node unpack.mjs",
+    "pack": "node pack.mjs",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",

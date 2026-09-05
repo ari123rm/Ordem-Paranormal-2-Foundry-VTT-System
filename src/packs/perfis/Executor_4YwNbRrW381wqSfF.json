@@ -1,0 +1,37 @@
+{
+  "name": "Executor",
+  "type": "perfil",
+  "_id": "4YwNbRrW381wqSfF",
+  "img": "icons/magic/symbols/rune-sigil-red-orange.webp",
+  "system": {
+    "description": "<p>Você age primeiro e pensa depois. E, se não der certo da primeira vez, tenta de novo até conseguir, vencendo pela força de sua perseverança.</p>",
+    "grants": [
+      {
+        "level": 1,
+        "uuid": "Compendium.ordemparanormal-v2.habilidades.Item.gpxrdY9dZsHBKOci",
+        "name": "Ímpeto"
+      }
+    ],
+    "themeColor": "#ae2c12"
+  },
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.2",
+    "createdTime": 1788573331134,
+    "modifiedTime": 1788574122577,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "sort": 300000,
+  "_key": "!items!4YwNbRrW381wqSfF"
+}
