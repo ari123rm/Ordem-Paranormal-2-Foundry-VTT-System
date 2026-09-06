@@ -4,6 +4,7 @@ import styles from "./RollModalApp.module.scss";
 export const RollModalApp = ({ actor, skillName, initialAttrKey, initialSkillValue, onConfirm, onCancel }: any) => {
   const isAttributeOnly = skillName.toLowerCase() === initialAttrKey.toLowerCase();
   const themeColor = actor?.system?.themeColor || "#c52222";
+  const themeMode = game.settings.get("ordemparanormal-v2", "themeMode") || "dark";
   
   const [selectedAttrKey, setSelectedAttrKey] = useState(initialAttrKey);
   const [selectedAttrValue, setSelectedAttrValue] = useState(actor.system.atributos[initialAttrKey]);
@@ -39,7 +40,7 @@ export const RollModalApp = ({ actor, skillName, initialAttrKey, initialSkillVal
   const diceOptions = [4, 6, 8, 10, 12, 20];
 
   return (
-    <div className={styles.modalContainer} style={{ "--theme-color": themeColor } as React.CSSProperties}>
+    <div className={styles.modalContainer + ` op2-theme-${themeMode}`} style={{ "--theme-color": themeColor } as React.CSSProperties}>
       <header className={styles.header}>
         <h2>{skillName}</h2>
         {/* <-- Input de DT adicionado de volta aqui */}

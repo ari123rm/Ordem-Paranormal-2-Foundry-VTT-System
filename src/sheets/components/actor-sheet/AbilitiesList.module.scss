@@ -6,7 +6,7 @@
 }
 
 .emptyMsg {
-  color: #666;
+  color: var(--op2-text-sec);;
   text-align: center;
   font-style: italic;
   margin-top: 2rem;
@@ -27,7 +27,7 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 0.8rem;
-  border-bottom: 1px dashed #333;
+  border-bottom: 1px dashed var(--op2-border);
   padding-bottom: 0.5rem;
 
   .badgeAndName {
@@ -68,7 +68,7 @@
       &:hover { transform: scale(1.2); }
     }
     .favInactive {
-      color: #555;
+      color: var(--op2-text-sec);
       cursor: pointer;
       transition: color 0.2s;
       &:hover { color: #ffc107; }
@@ -76,7 +76,7 @@
   }
 
   .deleteIcon {
-    color: #555;
+    color: var(--op2-text-sec);
     cursor: pointer;
     transition: color 0.2s;
     &:hover { color: #f44336; }
@@ -151,7 +151,7 @@
 }
 
 .editIcon, .deleteIcon {
-    color: #555;
+    color: var(--op2-text-sec);
     cursor: pointer;
     transition: color 0.2s;
     font-size: 0.95rem;

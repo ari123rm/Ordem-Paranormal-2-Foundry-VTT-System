@@ -39,21 +39,34 @@ Hooks.once("init", () => {
   );
 });
 Hooks.on("renderChatMessage", (message: any, html: any) => {
-  const card = html.find(".op2-chat-card, .op2-item-card");
+  // Leitura segura do nosso tema
+  let themeMode = "dark";
+  try {
+    themeMode = game.settings.get("ordemparanormal-v2", "themeMode") as string;
+  } catch (e) {
+    themeMode = "dark";
+  }
+
+  html.addClass(`op2-theme-${themeMode}`);
+
+  const actorColor = message.actor?.system?.themeColor;
+  const userColor = message.author?.color?.css || message.author?.color; 
+  const themeColor = actorColor || userColor || "#c52222";
+  html.get(0).style.setProperty("--op2-theme", themeColor);
+
+  const isCustomCard = html.find(".op2-chat-card, .op2-item-card").length > 0;
   
-  if (card.length > 0) {
-    const themeColor = card.data("theme") || "#c52222";
-    
+  if (isCustomCard) {
     html.css("border", `2px solid ${themeColor}`);
     html.css("border-radius", "6px");
     html.css("overflow", "hidden");
     
-    html.get(0).style.setProperty("--op2-theme", themeColor);
-
     const formulaEl = html.find(".dice-formula");
     if (formulaEl.length > 0) {
       const originalText = formulaEl.text();
       formulaEl.text(originalText.replace(/\[.*?\]/g, ''));
     }
+  } else {
+    html.addClass("op2-default-message");
   }
 });

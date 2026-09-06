@@ -11,6 +11,7 @@ import { HistoryTab } from "./actor-sheet/HistoryTab";
 
 export function CharacterSheetApp({ actor }: { actor: Actor.Implementation }) {
   const system = actor.system;
+  const themeMode = game.settings.get("ordemparanormal-v2", "themeMode") || "dark";
   const [activeTab, setActiveTab] = useState<"principal" | "habilidades" | "historico">("principal");
 
   const updateField = (path: string, value: any) => actor.update(createUpdateData(path, value));
@@ -25,8 +26,8 @@ export function CharacterSheetApp({ actor }: { actor: Actor.Implementation }) {
   };
 
   return (
-    <div className={styles.sheetWindow} style={{ "--theme-color": system.themeColor } as React.CSSProperties}>
-      
+    <div className={`${styles.sheetWindow} op2-theme-${themeMode}`} style={{ "--theme-color": system.themeColor } as React.CSSProperties}>
+
       {/* CONTEÚDO PRINCIPAL */}
       <main className={styles.mainContent}>
         {activeTab === "principal" && (

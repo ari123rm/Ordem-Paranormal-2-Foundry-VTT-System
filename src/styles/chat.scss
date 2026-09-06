@@ -1,8 +1,56 @@
 /* src/styles/chat.scss */
+/* src/styles/chat.scss */
+
+/* MENSAGENS PADRÃO (OOC, Falas, Tabelas) */
+.chat-message.op2-default-message {
+  background: var(--op2-bg-main) !important;
+  border: 1px solid var(--op2-border) !important;
+  border-left: 4px solid var(--op2-theme) !important;
+  box-shadow: 0 0 10px var(--op2-shadow) !important;
+  color: var(--op2-text-main) !important;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace !important;
+  padding: 0 !important;
+  margin-bottom: 8px;
+
+  .message-header {
+    background: var(--op2-bg-card) !important;
+    border-bottom: 1px dashed var(--op2-border) !important;
+    color: var(--op2-text-sec) !important;
+    padding: 6px 10px !important;
+    margin: 0 !important;
+    
+    .message-sender { 
+      color: var(--op2-theme) !important; 
+      font-family: 'Special Elite', monospace !important;
+      font-weight: bold; 
+      letter-spacing: 1px;
+    }
+  }
+
+  .message-content {
+    padding: 10px 12px !important;
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+}
+
+/* CARDS CUSTOMIZADOS (Remove padding nativo para os cards preencherem o espaço) */
+.chat-message:has(.op2-chat-card), .chat-message:has(.op2-item-card) {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  .message-header { padding: 8px 10px !important; }
+  .message-content { padding: 0 !important; }
+}
+
+/* Restante do seu código .dice-roll e .dice-tooltip continua aqui para baixo... */
 
 .chat-message:has(.op2-chat-card),
 .chat-message:has(.op2-item-card) {
-  background: #0a0a0a !important;
+  background: var(--op2-bg-main) !important;
   background-image: none !important;
   border: none !important; 
   padding: 0 !important;
@@ -13,29 +61,29 @@
   /* Cabeçalho nativo do Foundry */
   .message-header {
     background: rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid #222 !important;
-    color: #888 !important;
+    border-bottom: 1px solid var(--op2-border) !important;
+    color: var(--op2-text-sec) !important;
     padding: 8px 10px !important;
     margin: 0 !important;
   }
-  .message-sender { color: #ccc !important; font-weight: bold; }
-  .message-metadata { color: #666 !important; }
+  .message-sender { color: var(--op2-text-main) !important; font-weight: bold; }
+  .message-metadata { color: var(--op2-text-sec) !important; }
 
   .message-content {
     padding: 0 !important;
   }
 
   /* BARRA DA FÓRMULA CLICÁVEL */
+  /* BARRA DA FÓRMULA CLICÁVEL */
   .dice-roll {
     margin: 0 !important;
+    .dice-total { display: none !important; }
     
-    .dice-total { display: none !important; } 
-
     .dice-formula {
-      background: rgba(255, 255, 255, 0.05) !important;
+      background: var(--op2-bg-sec) !important;
       border: none !important;
-      border-top: 1px solid #333 !important;
-      color: #ccc !important;
+      border-top: 1px solid var(--op2-border) !important;
+      color: var(--op2-text-main) !important;
       font-family: 'Courier New', Courier, monospace !important;
       font-size: 1.1rem !important;
       font-weight: bold !important;
@@ -45,18 +93,18 @@
       border-radius: 0 !important;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
-
+      
       &:hover {
-        background: rgba(255, 255, 255, 0.1) !important;
-        color: #fff !important;
+        background: var(--op2-bg-card) !important;
+        color: var(--op2-text-main) !important;
       }
     }
-
+    
     /* CAIXA EXPANSÍVEL DOS DADOS (Tooltip) */
     .dice-tooltip {
-      background: #111 !important;
+      background: var(--op2-bg-main) !important;
       border: none !important;
-      border-top: 1px solid #333 !important;
+      border-top: 1px solid var(--op2-border) !important;
       padding: 12px 14px !important;
       margin: 0 !important;
       border-radius: 0 !important;
@@ -65,52 +113,39 @@
         margin-bottom: 10px;
         &:last-child { margin-bottom: 0; }
       }
-
-      /* =========================================
-         MATA OS ÍCONES NATIVOS BUGADOS DO FOUNDRY 
-      ============================================ */
-      .dice-rolls {
-        display: none !important; 
-      }
+      .dice-rolls { display: none !important; }
       
       .part-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: nowrap !important; /* IMPEDE A QUEBRA DE LINHA */
-        border-bottom: 1px dashed #333 !important;
+        flex-wrap: nowrap !important;
+        border-bottom: 1px dashed var(--op2-border) !important;
         padding-bottom: 8px !important;
         margin: 0 !important;
         gap: 12px;
         
-        /* O texto da esquerda (Ex: 1d10) */
-        .part-formula { 
-          color: #888 !important; 
+        .part-formula {
+          color: var(--op2-text-sec) !important;
           font-family: 'Courier New', Courier, monospace !important;
-          font-weight: bold; 
-          font-size: 1.1rem !important; 
+          font-weight: bold;
+          font-size: 1.1rem !important;
           white-space: nowrap;
         }
-        
-        /* O texto do meio (Ex: SITUACIONAL 1) */
         .part-flavor {
           color: var(--op2-theme, #c52222) !important;
           font-family: 'Special Elite', monospace !important;
-          /* Fonte reduzida para garantir que palavras grandes caibam inteiras */
-          font-size: 0.85rem !important; 
+          font-size: 0.85rem !important;
           text-transform: uppercase;
           flex: 1;
           text-align: right;
           padding-right: 8px;
           white-space: nowrap;
-          
         }
-        
-        /* O número da direita (Ex: 8) */
         .part-total {
-          background: rgba(0, 0, 0, 0.6) !important;
-          border: 1px solid #444 !important;
-          color: #e0e0e0 !important;
+          background: var(--op2-bg-card) !important;
+          border: 1px solid var(--op2-border) !important;
+          color: var(--op2-text-main) !important;
           font-family: 'Courier New', Courier, monospace !important;
           font-size: 1.2rem !important;
           padding: 2px 10px !important;
@@ -120,6 +155,7 @@
           text-align: center;
         }
       }
+      /* (Mantenha a regra .dice:has(.roll.max) daqui para baixo) */
 
       /* =========================================
          MAGIA: LÊ O DADO OCULTO E PINTA A CAIXA
@@ -127,16 +163,17 @@
       .dice:has(.roll.max) .part-total {
         color: #4caf50 !important; 
         border-color: #4caf50 !important;
-        background-color: rgba(76, 175, 80, 0.1) !important;
+        background-color: var(--op2-bg-sec) !important;
         box-shadow: 0 0 5px rgba(76, 175, 80, 0.3) !important;
       }
 
       .dice:has(.roll.min) .part-total {
         color: #f44336 !important; 
         border-color: #f44336 !important;
-        background-color: rgba(244, 67, 54, 0.1) !important;
+        background-color: var(--op2-bg-sec) !important;
         box-shadow: 0 0 5px rgba(244, 67, 54, 0.3) !important;
       }
     }
   }
 }
+

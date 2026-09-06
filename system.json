@@ -34,6 +34,13 @@
       "path": "packs/perfis",
       "type": "Item",
       "system": "ordemparanormal-v2"
+    },
+    {
+      "name":"tabelas-rolagem",
+      "label":"Tabelas de Rolagem",
+      "path":"packs/tabelas-rolagem",
+      "type":"RollTable",
+      "system":"ordemparanormal-v2"
     }
   ],
   "documentTypes": {
