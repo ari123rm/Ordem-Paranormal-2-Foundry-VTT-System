@@ -36,7 +36,7 @@ export const SkillsGrid = ({ system, updateField, actor }: any) => {
               {/* Linha superior: Se for Aptidão, junta o título e o select lado a lado */}
               {p.hasSub ? (
                 <div className={styles.aptidaoInlineHeader}>
-                  <span className={styles.rollableName} onClick={() => rollDice(actor, rollLabel, attrValue, skillData.value)}>
+                  <span className={styles.rollableName} onClick={() => rollDice(actor, rollLabel, skillData.base, skillData.value)}>
                     APTIDÃO
                   </span>
                   <select 
