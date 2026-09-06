@@ -1,5 +1,7 @@
 export const registerSystemSettings = () => {
-  game.settings.register("fvtt-ts-react-boilerplate", "chatImageMode", {
+  const systemId = "ordemparanormal-v2";
+
+  game.settings.register(systemId, "chatImageMode", {
     name: "Imagem no Chat",
     hint: "Escolha qual imagem do personagem aparecerá nas rolagens e habilidades.",
     scope: "client",
@@ -7,11 +9,23 @@ export const registerSystemSettings = () => {
     type: String,
     choices: {
         "token": "Token",
-        "avatar": "Avatar (Perfil)",
-      
+        "avatar": "Avatar (Perfil)",       
     },
     default: "token"
   });
 
-  // Futuras configurações do sistema podem ser adicionadas aqui
+  // Voltando com o nosso controle de tema seguro
+  game.settings.register(systemId, "themeMode", {
+    name: "Tema do Sistema",
+    hint: "Escolha o esquema de cores para as Fichas, Modais e Chat.",
+    scope: "client",
+    config: true,
+    type: String,
+    choices: {
+        "dark": "Modo Escuro",
+        "light": "Modo Claro",       
+    },
+    default: "dark",
+    onChange: () => window.location.reload()
+  });
 };

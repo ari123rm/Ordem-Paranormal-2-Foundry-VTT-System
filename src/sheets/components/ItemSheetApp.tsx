@@ -4,6 +4,7 @@ import styles from "./ItemSheetApp.module.scss";
 
 export function ItemSheetApp({ item }: { item: Item.Implementation }) {
   const system = item.system;
+  const themeMode = game.settings.get("ordemparanormal-v2", "themeMode") || "dark";
   
   // Constantes para definir o que renderizar
   const isHabilidade = item.type === "habilidade";
@@ -69,7 +70,7 @@ export function ItemSheetApp({ item }: { item: Item.Implementation }) {
   }, []);
 
   return (
-    <div className={styles.itemSheet}>
+    <div className={styles.itemSheet + ` op2-theme-${themeMode}`} style={{ "--theme-color": system.themeColor } as React.CSSProperties}>
       <header className={styles.header}>
         <img src={item.img} alt={item.name} onClick={() => {
           new FilePicker({ type: "image", current: item.img, callback: (path: string) => item.update({ img: path }) }).render(true);

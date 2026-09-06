@@ -1,0 +1,19 @@
+:root, .op2-theme-dark {
+  --op2-bg-main: #0a0a0a;
+  --op2-bg-sec: #111;
+  --op2-bg-card: rgba(0, 0, 0, 0.4);
+  --op2-border: #333;
+  --op2-text-main: #e0e0e0;
+  --op2-text-sec: #888;
+  --op2-shadow: rgba(0, 0, 0, 0.8);
+}
+
+.op2-theme-light {
+  --op2-bg-main: #f5f5f5;
+  --op2-bg-sec: #e6e6e6;
+  --op2-bg-card: rgba(0, 0, 0, 0.05);
+  --op2-border: #ccc;
+  --op2-text-main: #1a1a1a;
+  --op2-text-sec: #555;
+  --op2-shadow: rgba(0, 0, 0, 0.1);
+}

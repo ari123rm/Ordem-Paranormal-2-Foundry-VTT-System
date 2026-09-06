@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--op2-border);
   padding-bottom: 1rem;
 }
 
@@ -48,13 +48,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #bbb;
+  color: var(--op2-text-sec);
   font-weight: bold;
 
   .headerInput {
     width: 120px;
     background: transparent !important;
-    color: #bbb;
+    color: var(--op2-text-main);
     border: none !important;
     border-bottom: 1px dashed var(--theme-color) !important;
     text-align: center;

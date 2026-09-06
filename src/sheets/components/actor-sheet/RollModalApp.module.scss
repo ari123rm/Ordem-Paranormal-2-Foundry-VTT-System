@@ -3,8 +3,8 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background-color: #111;
-  color: #e0e0e0;
+  background-color: var(--op2-bg-main);
+  color: var(--op2-text-main);
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -12,14 +12,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--op2-border);
   padding-bottom: 0.8rem;
 
   h2 {
     font-family: 'Special Elite', monospace;
     font-size: 2.2rem;
     margin: 0;
-    color: white;
+    color: var(--op2-text-main);
     letter-spacing: 1px;
     text-transform: capitalize;
   }
@@ -30,14 +30,14 @@
     gap: 0.5rem;
     font-weight: bold;
     font-size: 1.1rem;
-    color: #ccc;
+    color: var(--op2-text-sec);
 
     input {
       width: 60px;
       background: rgba(0, 0, 0, 0.4);
-      border: 1px solid #555;
+      border: 1px solid var(--op2-border);
       border-radius: 4px;
-      color: white;
+      color: var(--op2-text-main);
       text-align: center;
       padding: 4px;
       font-size: 1.1rem;
@@ -59,15 +59,15 @@
     align-items: center;
     background: rgba(255, 255, 255, 0.02);
     padding: 0.6rem 1rem;
-    border: 1px solid #222;
+    border: 1px solid var(--op2-border);
     border-radius: 6px;
 
     /* Estilo para o select que troca o Atributo Base (Esquerda) */
     .labelSelect {
       background: transparent;
       border: none;
-      border-bottom: 1px dashed #555;
-      color: #ccc;
+      border-bottom: 1px dashed var(--op2-border);
+      color: var(--op2-text-sec);
       font-size: 1.1rem;
       font-weight: bold;
       font-family: inherit;
@@ -81,7 +81,7 @@
     .staticLabel {
       font-size: 1.1rem;
       font-weight: bold;
-      color: #ccc;
+      color: var(--op2-text-sec);
     }
 
     /* Estilo para o select que troca o Dado (Direita) */
@@ -99,23 +99,23 @@
         appearance: none;
         background: transparent;
         border: none;
-        color: white;
+        color: var(--op2-text-main);
         font-size: 1.2rem;
         font-weight: bold;
         font-family: inherit;
         cursor: pointer;
         text-align: right;
-        border-bottom: 1px dashed #555;
+        border-bottom: 1px dashed var(--op2-border);
         padding-bottom: 2px;
 
         &:focus { outline: none; border-bottom-color: var(--theme-color, #c52222); }
-        option { background: #1a1a1a; color: white; text-align: left; }
+        option { background: var(--op2-bg-sec); color: var(--op2-text-main); text-align: left; }
       }
       
       .staticDie {
         font-size: 1.2rem;
         font-weight: bold;
-        color: white;
+        color: var(--op2-text-main);
       }
     }
   }
@@ -133,8 +133,9 @@
     border-bottom: 2px solid var(--theme-color, #c52222);
     padding-bottom: 0.3rem;
 
-    .title { font-family: 'Special Elite', monospace; font-size: 1rem; color: #aaa; letter-spacing: 1px; }
-    .counter { font-size: 0.9rem; font-weight: bold; color: white; }
+
+    .title { font-family: 'Special Elite', monospace; font-size: 1rem; color: var(--op2-text-sec); letter-spacing: 1px; }
+    .counter { font-size: 0.9rem; font-weight: bold; color: var(--op2-text-main); }
   }
 
   .diceButtons {
@@ -144,10 +145,10 @@
 
     button {
       flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.4rem;
-      background: transparent; border: 1px solid #444; color: white; padding: 0.6rem 0;
+      background: transparent; border: 1px solid var(--op2-border); color: var(--op2-text-main); padding: 0.6rem 0;
       border-radius: 4px; cursor: pointer; font-family: inherit; font-weight: bold; transition: all 0.2s;
 
-      &:hover:not(:disabled) { background: rgba(255, 255, 255, 0.05); border-color: var(--theme-color, #c52222); }
+      &:hover:not(:disabled) { background: var(--op2-bg-sec); border-color: var(--theme-color, #c52222); }
       &:disabled { opacity: 0.4; cursor: not-allowed; }
     }
   }
@@ -175,7 +176,7 @@
   display: flex; gap: 1rem; margin-top: 0.5rem;
   button {
     flex: 1; padding: 0.8rem; border-radius: 4px; font-family: inherit; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: filter 0.2s;
-    &.btnCancel { background: transparent; border: 1px solid #555; color: #aaa; &:hover { background: rgba(255, 255, 255, 0.05); color: white; } }
+    &.btnCancel { background: transparent; border: 1px solid var(--op2-border); color: var(--op2-text-sec); &:hover { background: rgba(255, 255, 255, 0.05); color: var(--op2-text-main); } }
     &.btnRoll { background: var(--theme-color, #c52222); border: none; color: white; display: flex; justify-content: center; align-items: center; gap: 0.5rem; &:hover { filter: brightness(1.2); } }
   }
 }
