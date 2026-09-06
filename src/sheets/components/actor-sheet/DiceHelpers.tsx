@@ -60,5 +60,11 @@ export const rollDice = async (actor: any, skillName: string, baseAttrKey: strin
 
   const flavorText = buildRollFlavor({ skillName, subtitle, total: roll.total, ra, rb, isCrit, isCritFail, dt, isSuccess: dt ? roll.total >= dt : null, themeColor, actorImg });
 
-  roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor }), flavor: flavorText });
+  // CORREÇÃO: Cria o ChatMessage explicitamente passando o roll empacotado corretamente para o Dice So Nice
+  ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ actor }),
+    flavor: flavorText,
+    rolls: [roll],
+    content: String(roll.total)
+  });
 };
