@@ -1,0 +1,246 @@
+{
+  "name": "Efeitos de Falhas Críticas",
+  "_id": "HmvkOZq8TVmtfhKz",
+  "img": "icons/svg/skull.svg",
+  "description": "<p>Ao fazer um teste, se todos os dados forem 1, o teste é uma falha crítica. Você falha automaticamente no teste, independentemente da DT, e sofre uma penalidade adicional, que pode ser determinada pelo mestre ou por uma rolagem na tabela abaixo.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "_id": "TBjpNHHVmGRspx9O",
+      "name": "VEXAME",
+      "img": "icons/skills/social/thumbs-down.webp",
+      "description": "<p>O jogador precisa descrever a ação de seu personagem de forma vergonhosa. Por exemplo, ao fazer uma falha crítica ao escalar, talvez caia de bunda para cima. Isso não tem efeito em regras (além da falha normal), mas pode assombrar o personagem pelo resto de sua carreira.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.TBjpNHHVmGRspx9O"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "_id": "IqxK6nit7eojKFkb",
+      "name": "MACHUCADO",
+      "img": "icons/skills/wounds/injury-pain-body-orange.webp",
+      "description": "<p>Seu Físico diminui em um passo até o fim da cena.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.IqxK6nit7eojKFkb"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "_id": "v9xiQMFnEdOWpNMF",
+      "name": "DESATENÇÃO",
+      "img": "icons/skills/wounds/anatomy-organ-brain-pink-red.webp",
+      "description": "<p>Sua Mente diminui em um passo até o fim da cena.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.v9xiQMFnEdOWpNMF"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "_id": "EpSpL0HCTs0C8JqB",
+      "name": "IRRITAÇÃO",
+      "img": "icons/skills/wounds/injury-face-impact-orange.webp",
+      "description": "<p>Sua Emoção diminui em um passo até o fim da cena.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.EpSpL0HCTs0C8JqB"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "_id": "NqKeKtBjVVZP0XmW",
+      "name": "ACIDENTE",
+      "img": "icons/skills/wounds/injury-pain-impaled-hand-blood.webp",
+      "description": "<p>Você perde [[/r 1d4]] PV.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.NqKeKtBjVVZP0XmW"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "_id": "vVrvY24cagtbIP2B",
+      "name": "FRUSTRAÇÃO",
+      "img": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
+      "description": "<p>Você perde [[/r 1d4]] PD.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.vVrvY24cagtbIP2B"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "_id": "achLSNwRX6JVSUR9",
+      "name": "PERDA",
+      "img": "icons/skills/trades/profession-sailing-pirate.webp",
+      "description": "<p>Um item que você está carregando ou um espaço de compra disponível se perde — estragou ou foi esquecido ou roubado.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.achLSNwRX6JVSUR9"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "_id": "TDdTrLt4P9EkWsSm",
+      "name": "",
+      "img": "icons/skills/targeting/triangle-glow-blue.webp",
+      "description": "<p>Nenhum efeito adicional.</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.367",
+        "systemId": "ordemparanormal-v2",
+        "systemVersion": "0.0.7",
+        "createdTime": 1788667693611,
+        "modifiedTime": 1788667693611,
+        "lastModifiedBy": "tHYfiU9frs8eA1c3",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null,
+      "_key": "!tables.results!HmvkOZq8TVmtfhKz.TDdTrLt4P9EkWsSm"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "tHYfiU9frs8eA1c3": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.367",
+    "systemId": "ordemparanormal-v2",
+    "systemVersion": "0.0.7",
+    "createdTime": 1788667693611,
+    "modifiedTime": 1788667693611,
+    "lastModifiedBy": "tHYfiU9frs8eA1c3",
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "formula": "1d8",
+  "sort": 0,
+  "_key": "!tables!HmvkOZq8TVmtfhKz"
+}

@@ -2,7 +2,7 @@ import { extractPack } from "@foundryvtt/foundryvtt-cli";
 import fs from "fs";
 import path from "path";
 
-const packs = ["habilidades", "perfis"];
+const packs = ["habilidades", "perfis","tabelas-rolagem"];
 
 async function run() {
   console.log("📦 Iniciando extração dos compêndios (LevelDB -> JSON)...");
