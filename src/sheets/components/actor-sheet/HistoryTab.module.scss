@@ -1,3 +1,43 @@
+.historyLayout {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  padding: 1rem;
+}
+
+.textContent {
+  flex: 1; // Ocupa o máximo de espaço possível
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+
+  .charName {
+    font-family: 'Special Elite', monospace;
+    font-size: 5rem;
+    color: var(--theme-color);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  }
+
+  .subtitle {
+    font-family: 'Special Elite', monospace;
+    font-size: 1.5rem;
+    color: var(--theme-color);
+    margin: 0;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+}
+
 .editorWrapper {
   flex: 1;
   display: flex;
